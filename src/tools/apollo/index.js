@@ -8,17 +8,17 @@ import { WebSocketLink } from 'apollo-link-ws'
 import { getMainDefinition } from 'apollo-utilities'
 import store from '../mobx'
 
-const domain = 'devcloud3.digihcs.com'
-const port = '11098'
+// const domain = 'devcloud3.digihcs.com'
+// const port = '11098'
 
 const httpLink = new HttpLink({
-	// uri: 'http://localhost:4000/graphql'
-	uri: `http://${domain}:${port}/graphql`
+	uri: 'https://belu.herokuapp.com/graphql'
+	// uri: `http://${domain}:${port}/graphql`
 })
 
 const wsLink = new WebSocketLink({
-	// uri: 'ws://localhost:4000/graphql',
-	uri: `ws://${domain}:${port}/graphql`,
+	uri: 'ws://belu.herokuapp.com/graphql',
+	// uri: `ws://${domain}:${port}/graphql`,
 	options: {
 		reconnect: true
 	}
